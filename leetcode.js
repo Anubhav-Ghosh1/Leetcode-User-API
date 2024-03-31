@@ -1,4 +1,3 @@
-//graphql query
 const query = `
   query getUserProfile($username: String!) {
     allQuestionsCount {
@@ -54,9 +53,7 @@ const query = `
     }
   }
 `;
-
-
-// format data 
+ 
 const formatData = (data) => {
     let sendData =  {
         totalSolved: data.matchedUser.submitStats.acSubmissionNum[0].count,
@@ -78,7 +75,6 @@ const formatData = (data) => {
     return sendData;
 }
 
-//fetching the data
 exports.leetcode = (req, res) => {
     let user = req.params.id;
     fetch('https://leetcode.com/graphql', {
